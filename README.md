@@ -21,4 +21,5 @@ kube_conf = "~/.kube/xxxxxx.cfg"
 snaps = {
 "snap-xxxxxxxxxxxxxxxxx": {"pv": "yyyyyyyyyyyyyyyyyyyyyyyyyy", "app": "exchange-audit-service", "pvc": "exchange-audit-service-pvc",},
 ```
+snaps part will be generated automatically
 At the end you will have created namespace in target kubernetes, pvc and pv from source cluster
