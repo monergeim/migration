@@ -30,7 +30,7 @@ do
   aws ec2 create-snapshot --volume-id $vol_id --description "$i" --tag-specifications "ResourceType=snapshot,Tags=[{Key=pvc_name,Value=$pvc_name},{Key=vol_id,Value=$vol_id},{Key=Name,Value=Prod_bkp}]"
   
   snap_array[$c]=`aws ec2 describe-snapshots --filters Name=volume-id,Values=$vol_id --query "Snapshots[*].[SnapshotId]" --output text`
-  echo "\"${snap_array[$c]}\": {\"pv\": \"$pvc_name\", \"app\": \"$app\", \"pvc\": \"$pvc_name\",}," >> vars
+  echo "\"${snap_array[$c]}\": {\"pv\": \"$pv_name\", \"app\": \"$app\", \"pvc\": \"$pvc_name\",}," >> vars
   c=$((c+1))
   
 
